@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from './cookie.service';
 import { BaseHttpService } from './base-http.service';
 import { Observable } from 'rxjs';
 import { JWT_REFRESH_TIME } from '../constants';
@@ -58,8 +58,8 @@ export class TokenService extends BaseHttpService {
   }
 
   clearTokens(): void {
-    this.cookieService.delete(this.accessTokenKey, '/', '', true, 'Strict');
-    this.cookieService.delete(this.refreshTokenKey, '/', '', true, 'Strict');
+    this.cookieService.delete(this.accessTokenKey, '/', true, 'Strict');
+    this.cookieService.delete(this.refreshTokenKey, '/', true, 'Strict');
   }
 }
 
