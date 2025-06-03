@@ -5,7 +5,7 @@ import {
   ApplicationConfig,
   isDevMode,
   ErrorHandler,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 
 import { routes } from './app.routes';
@@ -18,7 +18,7 @@ import {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideRouter(routes),
     { provide: ErrorHandler, useClass: GlobalErrorHandlingService },
     provideServiceWorker('ngsw-worker.js', {
