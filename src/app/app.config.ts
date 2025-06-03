@@ -1,7 +1,12 @@
 import { provideRouter } from '@angular/router';
 
 import { provideServiceWorker } from '@angular/service-worker';
-import { ApplicationConfig, isDevMode, ErrorHandler } from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  ErrorHandler,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -13,6 +18,7 @@ import {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     { provide: ErrorHandler, useClass: GlobalErrorHandlingService },
     provideServiceWorker('ngsw-worker.js', {
