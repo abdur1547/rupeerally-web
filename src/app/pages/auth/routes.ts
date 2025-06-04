@@ -4,16 +4,20 @@ import { SignupComponent } from './signup/signup.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 export const authRoutes: Routes = [
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'signup',
-        component: SignupComponent
-    },
-    {
-        path: 'forgot-password',
-        component: ResetPasswordComponent
-    }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Login',
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    title: 'Sign Up',
+  },
+  {
+    path: 'forgot-password',
+    component: ResetPasswordComponent,
+    title: 'Reset Password',
+  },
 ];
