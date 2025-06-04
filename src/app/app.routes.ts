@@ -13,7 +13,7 @@ const emptyLayoutRoutes: Routes = [
 ];
 
 const defaultLayoutRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,
@@ -24,8 +24,8 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
-    canActivateChild: [authGuard],
     canMatch: [authGuard],
+    canActivateChild: [authGuard],
     children: [...defaultLayoutRoutes],
   },
   {
