@@ -1,5 +1,8 @@
 import { CanActivateFn } from '@angular/router';
+import { TokenService } from '../services';
+import { inject } from '@angular/core';
 
 export const authGuard: CanActivateFn = () => {
-  return true;
+  const toastService: TokenService = inject(TokenService);
+  return !toastService.isTokenExpired();
 };
