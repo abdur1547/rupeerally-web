@@ -61,6 +61,17 @@ export class TokenService extends BaseHttpService {
     this.cookieService.delete(this.accessTokenKey, '/', true, 'Strict');
     this.cookieService.delete(this.refreshTokenKey, '/', true, 'Strict');
   }
+
+  isTokenExpired(): boolean {
+    try {
+      const token = this.getAccessToken() ?? '';
+      const payload = JSON.parse(atob(token).split('.')[1]);
+      const now = Math.floor(Date.now() / 1000);
+      return payload.exp && payload.exp < now;
+    } catch {
+      return true;
+    }
+  }
 }
 
 export interface RefreshAccessTokenResp {
