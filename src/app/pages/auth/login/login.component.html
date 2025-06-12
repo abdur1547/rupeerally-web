@@ -1,10 +1,56 @@
-<h4>Login</h4>
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <label for="email">Email: </label>
-    <input type="email" name="email" id="email" formControlName="email"><br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" formControlName="password"><br>
-    <button type="submit">Login</button>
-</form>
-<button (click)="getTokens()">Tokens</button>
-<button (click)="clearTokens()">Clear</button>
+<div class="flex items-center justify-center min-h-screen bg-white px-4">
+    <div class="w-full max-w-sm">
+        <h2 class="text-center text-xl font-medium mb-2">RupeeRally</h2>
+
+        <h1 class="text-center text-2xl font-semibold mb-6">
+            Login to <span>RupeeRally</span>
+        </h1>
+
+        <div class="flex justify-between gap-2 mb-4">
+            <button class="btn w-1/2 border border-gray-300 bg-white text-black">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w- h-5 mr-2" />
+                Google
+            </button>
+            <button class="btn w-1/2 border border-gray-300 bg-white text-black">
+                <img src="https://www.svgrepo.com/show/503173/apple-logo.svg" alt="Apple" class="w-6 h-6 mr-2" />
+                Apple
+            </button>
+        </div>
+
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300" />
+            <span class="px-2 text-gray-500 text-sm">OR</span>
+            <hr class="flex-grow border-gray-300" />
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="space-y-4">
+            <div class="relative">
+                <input type="email" placeholder="Email Address" formControlName="email"
+                    class="input input-bordered w-full rounded-full pl-10" />
+                <span class="absolute left-3 top-3.5 text-gray-400">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </div>
+            <div class="relative">
+                <input type="password" placeholder="Password" formControlName="password"
+                    class="input input-bordered w-full rounded-full pl-10" />
+                <span class="absolute left-3 top-3.5 text-gray-400">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
+
+            <div class="text-right text-sm text-gray-600">
+                <a href="#">Forget Password?</a>
+            </div>
+
+            <button type="submit" class="btn w-full btn-primary text-black rounded-full text-lg">
+                Login
+            </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-600 mt-4">
+            Don’t have an account?
+            <a href="#" class="font-semibold">Sign up</a>
+        </p>
+    </div>
+</div>
