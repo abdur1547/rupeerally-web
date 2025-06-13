@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng_stater": {
+    "rupee_rally": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng_stater:build:production"
+              "buildTarget": "rupee_rally:build:production"
             },
             "development": {
-              "buildTarget": "ng_stater:build:development"
+              "buildTarget": "rupee_rally:build:development"
             }
           },
           "defaultConfiguration": "development"
