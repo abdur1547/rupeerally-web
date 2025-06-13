@@ -24,17 +24,22 @@
         </div>
 
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="space-y-4">
-            <div class="">
-                <input type="email" placeholder="Email Address" formControlName="email"
-                    class="input input-bordered w-full rounded-full pl-10" />
-                <img src="https://www.svgrepo.com/show/503173/apple-logo.svg" alt="Apple" class="w-6 h-6" />
-            </div>
-            <div class="relative">
-                <input type="password" placeholder="Password" formControlName="password"
-                    class="input input-bordered w-full rounded-full pl-10" />
-                <span class="absolute left-3 top-3.5 text-gray-400">
-                </span>
-            </div>
+            <label class="input w-full rounded-full">
+                <svg width="22" height="22" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0.204224 0.96875L0.985474 0.1875H21.298L22.0792 0.96875V15.0312L21.298 15.8125H0.985474L0.204224 15.0312V0.96875ZM1.76672 2.58594V14.25H20.5167V2.5875L11.6261 9.40625H10.673L1.76672 2.58594ZM19.0011 1.75H3.28235L11.1417 7.79531L19.0011 1.75Z"
+                        fill="#8B8B8B" />
+                </svg>
+                <input type="email" class="grow" placeholder="Email Address" formControlName="email" />
+            </label>
+            <label class="input w-full rounded-full">
+                <svg width="22" height="22" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.975 10C14.975 8.98892 14.1528 8.16667 13.1417 8.16667H12.225V5.41667C12.225 2.88942 10.1689 0.83334 7.64168 0.83334C5.11443 0.83334 3.05835 2.88942 3.05835 5.41667V8.16667H2.14168C1.1306 8.16667 0.30835 8.98892 0.30835 10V17.3333C0.30835 18.3444 1.1306 19.1667 2.14168 19.1667H13.1417C14.1528 19.1667 14.975 18.3444 14.975 17.3333V10ZM4.89168 5.41667C4.89168 3.90051 6.12552 2.66667 7.64168 2.66667C9.15785 2.66667 10.3917 3.90051 10.3917 5.41667V8.16667H4.89168V5.41667Z"
+                        fill="#8B8B8B" />
+                </svg>
+                <input type="password" class="grow" placeholder="Password" formControlName="password" />
+            </label>
 
             <div class="text-right text-sm text-gray-600">
                 <a href="#">Forget Password?</a>
